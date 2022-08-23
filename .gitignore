@@ -1,4 +1,5 @@
 output/
+downloads/
 venv/
 temp/
 .rpa/
