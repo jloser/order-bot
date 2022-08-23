@@ -37,7 +37,8 @@ Order robots from RobotSpareBin Industries Inc
     ${orders}=    Get orders
     Open the robot order website
     Close the annoying modal
-    ${counter}=    Set Variable    0
+    # for testing only - did not want to go through all 20 orders
+    # ${counter}=    Set Variable    0
 
     FOR    ${row}    IN    @{orders}
         Close the annoying modal
@@ -48,8 +49,9 @@ Order robots from RobotSpareBin Industries Inc
         ${screenshot}=    Take a screenshot of the robot    ${row}[Order number]
         Embed the robot screenshot to the receipt PDF file    ${screenshot}    ${pdf}
         Go to order another robot
-        ${counter}=    Evaluate    ${counter} + 1
-        IF    ${counter} == 3    BREAK
+        # for testing only - did not want to go through all 20 orders
+        # ${counter}=    Evaluate    ${counter} + 1
+        # IF    ${counter} == 3    BREAK
     END
     Create a ZIP file of the receipts
     [Teardown]    Log out and close the browser
